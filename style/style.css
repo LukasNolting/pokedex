@@ -1,7 +1,25 @@
+*{
+    margin: 0;
+}
+
+
+html{
+    background-color: #95acda;
+}
+
 body{
 
-    margin: 0;
+    margin: 10px;
+    /* border: 1px solid red; */
+    height: calc(100vh - 22px);
+    border-radius: 15px;
+    background-color: white;
+    
+}
 
+nav{
+    height: 15%;
+    border: 1px solid red;
 }
 
 
