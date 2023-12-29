@@ -1,6 +1,6 @@
 * {
   margin: 0;
-  font-family: 'Roboto';
+  font-family: "Roboto";
 }
 
 html {
@@ -9,11 +9,10 @@ html {
 
 body {
   margin: 10px;
-  height: calc(100vh - 22px);
   border-radius: 15px;
   background-color: #ffffff;
-  -webkit-box-shadow: 0px 0px 15px 8px rgba(110,110,110,0.5); 
-box-shadow: 0px 0px 15px 8px rgba(110,110,110,0.5);
+  -webkit-box-shadow: 0px 0px 15px 8px rgba(110, 110, 110, 0.5);
+  box-shadow: 0px 0px 15px 8px rgba(110, 110, 110, 0.5);
 }
 
 nav {
@@ -21,8 +20,8 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
--webkit-box-shadow: 0px 5px 15px 3px rgba(110,110,110,0.5); 
-box-shadow: 0px 5px 15px 3px rgba(110,110,110,0.5);
+  -webkit-box-shadow: 0px 5px 15px 3px rgba(110, 110, 110, 0.5);
+  box-shadow: 0px 5px 15px 3px rgba(110, 110, 110, 0.5);
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
   padding: 10px 80px;
@@ -34,34 +33,33 @@ box-shadow: 0px 5px 15px 3px rgba(110,110,110,0.5);
   cursor: pointer;
 }
 
-.search-container{
-    height: 40px;
-    display: flex;
-    align-items: center;
-    gap:10px;
+.search-container {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-input{
-    height: 40px;
-    border: none;
-    border-radius: 10px;
-    color: black;
-    background-color: #ada9a96c;
+input {
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  color: black;
+  background-color: #ada9a96c;
 }
 
-input{
-    padding-left: 15px;
-    width: 250px;
+input {
+  padding-left: 15px;
+  width: 250px;
 }
 
-.button-search-img{
-    height: 35px;
-    cursor: pointer;
+.button-search-img {
+  height: 35px;
+  cursor: pointer;
 }
 
-
-h1{
-    font-size: 36px;
+h1 {
+  font-size: 36px;
 }
 
 .space {
@@ -75,8 +73,8 @@ h1{
   display: flex;
 }
 
-.d-none{
-    display: none;
+.d-none {
+  display: none;
 }
 
 .info-container {
@@ -87,17 +85,54 @@ h1{
   min-height: 100px;
 }
 
-.card-container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 20px;
+#card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
 }
 
-.card{
-    height: 180px;
-    width: 180px;
-    border: 1px solid red;
-    border-radius: 15px;
-    margin: 20px;
+.card {
+  border: 1px solid red;
+  border-radius: 15px;
+  margin: 20px;
+  height: 100%;
+  -webkit-box-shadow: 0px 0px 14px 5px rgba(0, 0, 0, 0.71);
+  box-shadow: 0px 0px 14px 5px rgba(0, 0, 0, 0.71);
+}
+
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid red;
+  height: 20px;
+  width: 150px;
+}
+
+#name {
+  border: 1px solid red;
+}
+
+#id {
+  border: 1px solid red;
+}
+
+.card-content {
+  border: 1px solid red;
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px;
+  width: 150px;
+}
+
+#classes {
+  border: 1px solid red;
+}
+
+#poke-img {
+  border: 1px solid red;
 }
