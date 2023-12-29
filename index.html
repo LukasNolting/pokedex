@@ -5,23 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokedex</title>
     <script src="./script/script.js"></script>
+    <link rel="stylesheet" href="./style/fonts.css" />
     <link rel="stylesheet" href="./style/style.css" />
+    <link rel="icon" type="image/vnd.icon" href="./img/pokeball.ico" />
   </head>
   <body onload="loadPokemon()">
-        <nav>
-            <img src="./img/pokeball.svg" alt="">
-        </nav>
-        <div class="card-container"></div>
+    
+    <nav id="nav-search" class="d-none">
+      <a href="#" onclick="closeSearch()"><img src="./img/arrow-left.png" class="nav-img" /></a>
+      <div class="search-container">
+        <input type="text" placeholder="Pokemon suchen..." />
+        <img src="./img/search.png" class="button-search-img" />
+      </div>
+      <img src="./img/nav-img.svg">
+    </nav>
 
-
+    <nav id="nav-normal" class="">
+      <a href="#"><img src="./img/nav-img.svg" class="nav-img" /></a>
+      <h1>Pokedex</h1>
+      <img src="./img/search.png" alt="search" class="nav-img" onclick="openSearch()"/>
+    </nav>
+    <div class="card-container">
+        <div class="card">test</div>
+        <div class="card">test</div>
+        <div class="card">test</div>
+        <div class="card">test</div>
+        <div class="card">test</div>
+        <div class="card">test</div>
+    </div>
   </body>
 </html>
 
-
-
-
-
-    <!-- <div id="pokedex">
+<!-- <div id="pokedex">
       <h1 id="pokemonName">NAME</h1>
     </div>
     <div class="info-container">
