@@ -3,6 +3,20 @@
   font-family: "Roboto";
 }
 
+*::-webkit-scrollbar {
+  width: 13px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #95acda;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #95acda;
+  border-radius: 10px;
+  border: 2px double #0a0303;
+}
+
 html {
   background-color: #95acda;
 }
@@ -93,46 +107,193 @@ h1 {
 }
 
 .card {
-  border: 1px solid red;
   border-radius: 15px;
   margin: 20px;
   height: 100%;
   -webkit-box-shadow: 0px 0px 14px 5px rgba(0, 0, 0, 0.71);
   box-shadow: 0px 0px 14px 5px rgba(0, 0, 0, 0.71);
+  cursor: pointer;
+  box-shadow: inset 5px 5px 50px #5e4545;
 }
 
 .card-head {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
-  margin: 10px;
-  border: 1px solid red;
-  height: 20px;
-  width: 150px;
-}
-
-#name {
-  border: 1px solid red;
-}
-
-#id {
-  border: 1px solid red;
+  align-items: center;
+  margin: 20px;
+  border-bottom: 1px solid #808796e0;
 }
 
 .card-content {
-  border: 1px solid red;
   display: flex;
   height: 80px;
   justify-content: space-between;
-  padding: 10px;
-  margin: 10px;
+  padding: 0 20px 20px 20px;
   width: 150px;
 }
 
-#classes {
-  border: 1px solid red;
+.load-more{
+  display: flex;
+  justify-content: center;
+  padding: 0 80px 40px 80px;
 }
 
-#poke-img {
-  border: 1px solid red;
+button{
+  border: none;
+  border-radius: 15px;
+  padding: 15px;
+  color: white;
+  background-color: #95acda;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.pokeName{
+  border-radius: 15px;
+  padding: 4px 6px;
+  text-align: center;
+  font-size: 16px;
+  color: black;
+}
+.pokeId{
+  border-radius: 15px;
+  padding: 4px 6px;
+  text-align: center;
+  font-size: 16px;
+  color: black;
+}
+.pokeType{
+  border-radius: 15px;
+  padding: 4px 6px;
+  text-align: center;
+  background-color: #808796e0;
+  font-size: 12px;
+  color: white;
+}
+
+.pokeTypeContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.box-shadow-grass{
+  box-shadow: inset 5px 5px 50px #22963b;
+}
+.box-shadow-fire{
+  box-shadow: inset 5px 5px 50px #FA6555;
+}
+.box-shadow-water{
+  box-shadow: inset 5px 5px 50px #76BDFD;
+}
+.box-shadow-electric{
+  box-shadow: inset 5px 5px 50px #FFD970;
+}
+.box-shadow-poison{
+  box-shadow: inset 5px 5px 50px #ae63b2;
+}
+.box-shadow-ground{
+  box-shadow: inset 5px 5px 50px #baa76d;
+}
+.box-shadow-rock{
+  box-shadow: inset 5px 5px 50px #545454;
+}
+.box-shadow-ghost{
+  box-shadow: inset 5px 5px 50px #5a0096;
+}
+.box-shadow-ice{
+  box-shadow: inset 5px 5px 50px #38eeff;
+}
+.box-shadow-normal{
+  box-shadow: inset 5px 5px 50px #929292;
+}
+.box-shadow-bug{
+  box-shadow: inset 5px 5px 50px #24ddaf;
+}
+.box-shadow-fighting{
+  box-shadow: inset 5px 5px 50px #7c0b0b;
+}
+.box-shadow-fairy{
+  box-shadow: inset 5px 5px 50px #b421c2;
+}
+.box-shadow-psychic{
+  box-shadow: inset 5px 5px 50px #c0a407;
+}
+.box-shadow-dragon{
+  box-shadow: inset 5px 5px 50px #4e07c0;
+}
+.box-shadow-dark{
+  box-shadow: inset 5px 5px 50px #130130;
+}
+.box-shadow-steel{
+  box-shadow: inset 5px 5px 50px #5a5e5d;
+}
+
+/* html, body {margin: 0; height: 100%; overflow: hidden} */
+
+/* FOTOGALERIE */
+
+.d-none {
+  display: none;
+}
+
+.close-img {
+  height: 40px;
+  cursor: pointer;
+}
+
+.img-load-head {
+  display: flex;
+  justify-content: flex-end;
+  padding: 60px 60px 0 0;
+  background-color: rgba(0, 0, 0, 0.26);
+}
+
+.content-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 80%;
+}
+
+.img-load-content {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.img-load-arrows {
+  height: 40px;
+  margin: 30px;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.img-click {
+  z-index: 99;
+  height: 100vh;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.img-load {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.26);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.poke-content{
+  width: 60%;
+  height: 80%;
+  background-color: white;
+  border-radius: 15px;
 }
