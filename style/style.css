@@ -233,8 +233,6 @@ button{
   box-shadow: inset 5px 5px 50px #5a5e5d;
 }
 
-/* html, body {margin: 0; height: 100%; overflow: hidden} */
-
 /* FOTOGALERIE */
 
 .d-none {
@@ -242,7 +240,7 @@ button{
 }
 
 .close-img {
-  height: 40px;
+  height: 20px;
   cursor: pointer;
 }
 
@@ -250,7 +248,7 @@ button{
   display: flex;
   justify-content: flex-end;
   padding: 60px 60px 0 0;
-  background-color: rgba(0, 0, 0, 0.26);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .content-flex {
@@ -273,6 +271,9 @@ button{
   margin: 30px;
   cursor: pointer;
   z-index: 99;
+  background-color: black;
+  padding: 20px;
+  border-radius: 15px;
 }
 
 .img-click {
@@ -285,7 +286,7 @@ button{
 
 .img-load {
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.26);
+  background-color: rgba(0, 0, 0, 0);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -294,6 +295,16 @@ button{
 .poke-content{
   width: 60%;
   height: 80%;
+  background-color: black;
+  border-radius: 15px;
+}
+
+.card-big{
   background-color: white;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
   border-radius: 15px;
 }
