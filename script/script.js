@@ -85,6 +85,7 @@ function renderPokemonBig(i) {
   document.getElementById("container-big").innerHTML = 
   renderPokemonBigCard(pokeId,pokeImg,pokeName,pokeType,i);
   document.getElementById(`pokeCardBigColor${i}`).classList.add(`box-shadow-${color}`);
+  document.getElementById("body").classList.add("noscroll");
   loadMoreLast(i);
   renderOverview(i);
 }
@@ -102,11 +103,14 @@ function renderOverview(i){
       }
       document.getElementById("card-overview").innerHTML = /*html*/ `
       <div class="card-overview">
-      <div class="flex-align-center-gap10"><img src="../img/height.svg" class="icon-big-card">Height: ${height} m</div>
-      <div class="flex-align-center-gap10"><img src="../img/weight.svg" class="icon-big-card">Weight: ${weight} kg</div>
+        <div class="card-overview-center">
+      <div class="flex-align-center-gap10"><img src="../img/height.svg" class="icon-big-card"><b class="width">Height:</b> ${height} m</div>
+      <div class="flex-align-center-gap10"><img src="../img/weight.svg" class="icon-big-card"><b class="width">Weight:</b> ${weight} kg</div>
       <div class="flex-align-center-gap10">
-      Abilities: 
+      <img src="../img/pokeball.png" class="icon-big-card">
+      <b class="width">Abilities: </b>
       <div class="flex-column">${ability}</div>
+      </div>
       </div>
       </div>
       `;    
@@ -114,7 +118,7 @@ function renderOverview(i){
 
 function renderOverviewAbilities(pokeAbilities){
     return /*html*/ `
-    <div class="abilities-ow"><img src="../img/pokeball.png" class="icon-big-card"> ${pokeAbilities}</div>
+    <div class="abilities-ow"> ${pokeAbilities}</div>
     `;
 }
 
@@ -126,9 +130,10 @@ function loadMoreLast(i){
   }
 }
 
-function closeImg() {
+function closeBigCard() {
   document.getElementById("pokeCardBig").classList.add("d-none");
   document.getElementById("container-big").classList.add("d-none");
+  document.getElementById("body").classList.remove("noscroll");
 }
 
 function loadNextPokemon(i) {
