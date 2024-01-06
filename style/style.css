@@ -86,7 +86,6 @@ nav {
   height: 100%;
   border: 0px solid #0d6efd !important;
   border-radius: 15px !important;
-  padding: 0 !important;
 }
 
 .nav-link {
@@ -94,8 +93,8 @@ nav {
   color: white !important;
   height: 100%;
   cursor: pointer;
-  border: 2px solid #808796e0 !important;
-  padding: 0 !important;
+  padding: 5px !important;
+  margin: 10px;
 }
 .nav-link:hover {
   background-color: white;
@@ -104,7 +103,6 @@ nav {
   /* color: white !important; */
   height: 100%;
   cursor: pointer;
-  border: 2px solid #808796e0 !important;
 }
 
 .card-header-tabs {
@@ -198,17 +196,17 @@ h1 {
 }
 
 .card-header {
-  background-color: #0d6efd !important;
+  background-color: #0a48a7 !important;
   padding: 0px !important;
   width: 100%;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border: 2px solid #808796e0 !important;
+  border-top-left-radius: 15px !important;
+  border-top-right-radius: 15px !important;
+  border-bottom: 1px solid #808796e0 !important;
 }
 
 .nav-tabs {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .active {
@@ -451,7 +449,6 @@ h1 {
 
 .flex-align-center-gap10 {
   display: flex;
-  align-items: center;
   gap: 10px;
   padding: 10px 0;
 }
@@ -463,6 +460,11 @@ h1 {
   text-align: start;
   gap: 5px;
   align-items: center;
+  margin-bottom: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #0a48a7;
+  color: white;
 }
 
 .card-overview-center {
@@ -470,7 +472,6 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-bottom: 20px;
 }
 
 .icon-big-card {
