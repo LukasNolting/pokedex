@@ -4,30 +4,34 @@
   box-sizing: unset !important;
 }
 
-*::-webkit-scrollbar {
-  width: 13px;
+::-webkit-scrollbar {
+    width: 25px;
 }
 
-*::-webkit-scrollbar-track {
-  background: #0D6EFD;
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 15px;
 }
 
-*::-webkit-scrollbar-thumb {
-  background-color: #0D6EFD;
-  border-radius: 10px;
-  border: 2px double #0a0303;
-}
-
-html {
-  background-color: #0D6EFD;
+::-webkit-scrollbar-thumb {
+    border-radius: 15px;
+    background: url('../img/pokeball.png') rgba(165, 42, 42, 0.425);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 body {
+ background-color: #0D6EFD !important;
+  margin: 20px !important;
+  height: 100%;
+}
+
+main{
   border-radius: 15px;
   background-color: #ffffff;
   -webkit-box-shadow: 0px 0px 15px 8px rgba(110, 110, 110, 0.5);
   box-shadow: 0px 0px 15px 8px rgba(110, 110, 110, 0.5);
-  
 }
 
 nav {
@@ -55,7 +59,6 @@ nav {
 
 .nav-item{
   width: calc(100% / 3);
-  /* border-radius: 10px !important; */
   gap: 2px !important;
   height: 100%;
   border: 0px solid blue !important;
@@ -109,11 +112,9 @@ h1 {
   font-size: 36px;
 }
 
-/* .d-none {
+.d-none {
   display: none;
-} */
-
-
+} 
 
 .info-container {
   background-color: white;
@@ -191,8 +192,12 @@ h1 {
 }
 
 .card-body{
-  width: 100%;
+  width: 80%;
   padding: 0 !important; 
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
 }
 .card{
   width: 500px !important;
@@ -226,6 +231,13 @@ h1 {
   font-size: 16px;
   color: black;
 }
+.pokeIdBig{
+  border-radius: 15px;
+  padding: 4px 6px;
+  text-align: center;
+  font-size: 20px;
+  color: black;
+}
 .pokeType{
   border-radius: 15px;
   padding: 4px 6px;
@@ -252,7 +264,7 @@ h1 {
   align-items: center;
   height: 100px;
 }
-.pokeTypeContainer-big{
+.pokeTypeContainerBig{
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -313,13 +325,6 @@ h1 {
   box-shadow: inset 5px 5px 50px #5a5e5d !important;
 }
 
-/* FOTOGALERIE */
-
-.close-img {
-  height: 20px;
-  cursor: pointer;
-}
-
 .content-flex {
   display: flex;
   justify-content: center;
@@ -345,15 +350,17 @@ h1 {
   border-radius: 5px;
 }
 
-.img-click {
+.show-big {
+  left: 0;
   z-index: 99;
   height: 100vh;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #130130;
 }
 
 .img-load {
@@ -379,4 +386,38 @@ h1 {
   display: flex;
   flex-direction: column;
   border-radius: 15px;
+}
+
+.flex-align-center-gap10{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.card-overview{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  text-align: start;
+  gap: 5px;
+}
+
+.icon-big-card{
+      background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 15px;
+    height: 15px;
+    display: flex;
+}
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
+.abilities-ow{
+  display: flex;
+  align-items: center;
+  gap:5px;
 }
