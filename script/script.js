@@ -29,6 +29,8 @@ async function loadPokemon() {
 }
 
 async function loadMore(morePokemon) {
+  document.getElementById("loadMoreBtn").classList.add("no-click");
+  document.getElementById("loadMoreBtn").innerHTML = "Please wait...";
   for (let i = pokemons; i < pokemons + morePokemon; i++) {
     const url = PokeIdURL[i];
     let response = await fetch(url);
@@ -37,6 +39,8 @@ async function loadMore(morePokemon) {
     renderPokemon(i);
   }
   pokemons += morePokemon;
+  document.getElementById("loadMoreBtn").classList.remove("no-click");
+  document.getElementById("loadMoreBtn").innerHTML = "Load more Pokemon";
 }
 
 function renderPokemon(i) {
@@ -82,11 +86,10 @@ function renderPokemonBig(i) {
     let pokeTypeElement = pokeTypes[i]["type"]["name"];
     pokeType += cardPokeTypesBig(pokeTypeElement);
   }
-  document.getElementById("container-big").innerHTML = 
+  document.getElementById('big-Card').innerHTML = 
   renderPokemonBigCard(pokeId,pokeImg,pokeName,pokeType,i);
   document.getElementById(`pokeCardBigColor${i}`).classList.add(`box-shadow-${color}`);
   document.getElementById("body").classList.add("noscroll");
-  loadMoreLast(i);
   renderOverview(i);
 }
 
@@ -101,7 +104,8 @@ function renderOverview(i){
           abilities[j]["ability"]["name"].slice(1);
         ability += renderOverviewAbilities(pokeAbilities);
       }
-      document.getElementById("card-overview").innerHTML = /*html*/ `
+      document.getElementById(`card-overview${i}`).innerHTML = "";
+      document.getElementById(`card-overview${i}`).innerHTML = /*html*/ `
       <div class="card-overview">
         <div class="card-overview-center">
       <div class="flex-align-center-gap10"><img src="../img/height.svg" class="icon-big-card"><b class="width">Height:</b> ${height} m</div>
@@ -113,7 +117,10 @@ function renderOverview(i){
       </div>
       </div>
       </div>
-      `;    
+      `;  
+      document.getElementById("about").classList.add("active"); 
+      document.getElementById("stats").classList.remove("active"); 
+      document.getElementById("moves").classList.remove("active"); 
 }
 
 function renderOverviewAbilities(pokeAbilities){
@@ -122,23 +129,44 @@ function renderOverviewAbilities(pokeAbilities){
     `;
 }
 
-function loadMoreLast(i){
-  if (i == pokemonAsJsonComp.length - 1){
-    loadMore(2);
-  } else {
-    loadMore(1);
-  }
+function renderMoves(i){
+  let moves = pokemonAsJsonComp[i]["moves"];
+  let move = [];
+
+  for (let j = 0; j < 6; j++) {
+    let pokeMove =
+      moves[j]["move"]["name"].charAt(0).toUpperCase() +
+      moves[j]["move"]["name"].slice(1);
+      move += `<div class="moves-list"><img src="../img/pokeball.png" class="icon-big-card">${pokeMove}</div>`;
+      }
+
+  document.getElementById(`card-overview${i}`).innerHTML = "";
+  document.getElementById(
+    `card-overview${i}`).innerHTML = `<div class="card-moves">
+      ${move}</div>`;
+
+  document.getElementById("moves").classList.add("active");
+  document.getElementById("about").classList.remove("active");
+  document.getElementById("stats").classList.remove("active"); 
+  event.stopPropagation(); 
 }
+
+function renderStats(i){
+  renderChart(i);
+}
+
+
 
 function closeBigCard() {
   document.getElementById("pokeCardBig").classList.add("d-none");
+  document.getElementById("container-big-background").classList.add("d-none");
   document.getElementById("container-big").classList.add("d-none");
   document.getElementById("body").classList.remove("noscroll");
 }
 
 function loadNextPokemon(i) {
   if (i == pokemonAsJsonComp.length - 1) {
-  loadMore(1);
+   i = 0;
   } else {
     i++;
   }

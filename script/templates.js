@@ -22,17 +22,24 @@ function cardPokeTypesSmall(pokeType) {
 // Render big Cards onclick
 
 function renderPokemonBigCard(pokeId, pokeImg, pokeName, pokeType, i) {
-  document.getElementById("container-big").classList.remove("d-none");
-  return /*html*/ `<div id="pokeCardBig" class="show-big" onclick="closeBigCard()">
+  document.getElementById("big-Card").classList.remove("d-none");
+  return /*html*/ `
+  
+  <div id="container-big-background" class="big-background" onclick="closeBigCard()"></div>
+  
+  <div class="full-card">
   <img
     src="./img/prev.png"
     alt="previous"
     class="poke-load-arrows"
     onclick="loadPrevPokemon(${i})"
   />
+  <!-- <div id="container-big" class="big-center"> -->
+    <div id="pokeCardBig" class="show-big">
   <div class="card text-center" id="pokeCardBigColor${i}">
 
-  <div class="close-big-card-cross"><img src="../img/cross.png" class="close-big-card-cross-img" onclick="closeBigCard()"></div>
+  <div class="close-big-card-cross">
+    <img src="../img/cross.png" class="close-big-card-cross-img" onclick="closeBigCard()"></div>
     <div class="card-body">
       <div class="flex-sb">
         <h5 class="card-title" id="name-big${pokeName}">${pokeName}</h5>
@@ -46,31 +53,37 @@ function renderPokemonBigCard(pokeId, pokeImg, pokeName, pokeType, i) {
       <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
       <li class="nav-item">
-        <a class="nav-link active" onclick="loadOverview()">About</a>
+        <a class="nav-link active" onclick="renderOverview(${i})" id="about">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" onclick="loadStats()">Stats</a>
+        <a class="nav-link" onclick="renderStats(${i})" id="stats">Stats</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" onclick="loadAbilities()">Moves</a>
+        <a class="nav-link" onclick="renderMoves(${i})" id="moves">Moves</a>
       </li>
     </ul>
   </div>
-      <div id="card-overview">
+      <div id="card-overview${i}">
         
       </div>
-      </div>
+      <!-- </div> -->
 
     </div>
   </div>
-  <img
-    src="./img/next.png"
-    alt="next image"
-    class="poke-load-arrows"
-    onclick="loadNextPokemon(${i})"
-  />
 </div>
-`;
+
+</div>
+
+<img
+  src="./img/next.png"
+  alt="next image"
+  class="poke-load-arrows"
+  onclick="loadNextPokemon(${i})"
+  
+/>
+
+
+</div>`;
 }
 
 function cardPokeTypesBig(pokeTypes) {
