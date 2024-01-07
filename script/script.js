@@ -6,6 +6,8 @@ let pokemonAsJsonComp = [];
 let currentPokemon = [];
 
 async function loadAPI() {
+  document.getElementById("loading-screen").classList.remove("d-none");
+  document.getElementById("body").classList.add("noscroll");
   let url = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1302";
   let response = await fetch(url);
   let responseAsJson = await response.json();
@@ -26,9 +28,12 @@ async function loadPokemon() {
     renderPokemon(i);
   }
   pokemons = 20;
+  document.getElementById("loading-screen").classList.add("d-none");
+  document.getElementById("body").classList.remove("noscroll");
 }
 
 async function loadMore(morePokemon) {
+  document.getElementById("loading-screen").classList.remove("d-none");
   document.getElementById("loadMoreBtn").classList.add("no-click");
   document.getElementById("loadMoreBtn").innerHTML = "Please wait...";
   for (let i = pokemons; i < pokemons + morePokemon; i++) {
@@ -41,6 +46,7 @@ async function loadMore(morePokemon) {
   pokemons += morePokemon;
   document.getElementById("loadMoreBtn").classList.remove("no-click");
   document.getElementById("loadMoreBtn").innerHTML = "Load more Pokemon";
+  document.getElementById("loading-screen").classList.add("d-none");
 }
 
 function renderPokemon(i) {
@@ -50,15 +56,12 @@ function renderPokemon(i) {
   let pokeId = pokemonAsJsonComp[i]["id"];
   let pokeTypes = pokemonAsJsonComp[i]["types"];
   let pokeType = [];
-  let pokeImg =
-    pokemonAsJsonComp[i]["sprites"]["other"]["official-artwork"][
-      "front_default"
-    ];
+  let pokeImg = pokemonAsJsonComp[i]["sprites"]["other"]["official-artwork"]["front_default"];
   let color = pokemonAsJsonComp[i]["types"][0]["type"]["name"];
 
-  for (let i = 0; i < pokeTypes.length; i++) {
-    let pokeTypeElement = pokeTypes[i]["type"]["name"];
-    pokeType += cardPokeTypesSmall(pokeTypeElement);
+  for (let j = 0; j < pokeTypes.length; j++) {
+    let pokeTypeElement = pokeTypes[j]["type"]["name"];
+    pokeType += cardPokeTypesSmall(pokeTypeElement, i, j);
   }
   document.getElementById("card-container").innerHTML += renderPokemonSmallCard(
     pokeId,
@@ -71,27 +74,26 @@ function renderPokemon(i) {
 }
 
 function renderPokemonBig(i) {
-  let pokeName =
-    pokemonAsJsonComp[i]["name"].charAt(0).toUpperCase() +
-    pokemonAsJsonComp[i]["name"].slice(1);
+  let pokeName = pokemonAsJsonComp[i]["name"].charAt(0).toUpperCase() +
+                 pokemonAsJsonComp[i]["name"].slice(1);
   let pokeId = pokemonAsJsonComp[i]["id"];
   let pokeTypes = pokemonAsJsonComp[i]["types"];
   let pokeType = [];
-  let pokeImg =
-    pokemonAsJsonComp[i]["sprites"]["other"]["official-artwork"][
-      "front_default"
-    ];
+  let pokeImg = pokemonAsJsonComp[i]["sprites"]["other"]["official-artwork"]["front_default"];
   let color = pokemonAsJsonComp[i]["types"][0]["type"]["name"];
-  for (let i = 0; i < pokeTypes.length; i++) {
-    let pokeTypeElement = pokeTypes[i]["type"]["name"];
-    pokeType += cardPokeTypesBig(pokeTypeElement);
+    
+    for (let j = 0; j < pokeTypes.length; j++) {
+    let pokeTypeElement = pokeTypes[j]["type"]["name"];
+    pokeType += cardPokeTypesBig(pokeTypeElement,i, j);
+    
   }
-  document.getElementById('big-Card').innerHTML = 
-  renderPokemonBigCard(pokeId,pokeImg,pokeName,pokeType,i);
+  document.getElementById('big-Card').innerHTML = renderPokemonBigCard(pokeId,pokeImg,pokeName,pokeType,i);
   document.getElementById(`pokeCardBigColor${i}`).classList.add(`box-shadow-${color}`);
   document.getElementById("body").classList.add("noscroll");
   renderOverview(i);
 }
+
+
 
 function renderOverview(i){
       let height = pokemonAsJsonComp[`${i}`]["height"] / 10;

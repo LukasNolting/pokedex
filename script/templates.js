@@ -15,8 +15,8 @@ function renderPokemonSmallCard(pokeId, pokeName, pokeType, pokeImg, i) {
 
 // Render Types / Classes on small Cards
 
-function cardPokeTypesSmall(pokeType) {
-  return /*html*/ `<div class='pokeType'>${pokeType}</div>`;
+function cardPokeTypesSmall(pokeTypeElement, i, j) {
+  return /*html*/ `<div class='pokeType box-shadow-${pokeTypeElement}' id='color-type-big${i}${j}'>${pokeTypeElement}</div>`;
 }
 
 // Render big Cards onclick
@@ -27,15 +27,14 @@ function renderPokemonBigCard(pokeId, pokeImg, pokeName, pokeType, i) {
   
   <div id="container-big-background" class="big-background" onclick="closeBigCard()"></div>
   
-  <div class="full-card">
-  <img
-    src="./img/prev.png"
-    alt="previous"
-    class="poke-load-arrows"
-    onclick="loadPrevPokemon(${i})"
-  />
-  <!-- <div id="container-big" class="big-center"> -->
-    <div id="pokeCardBig" class="show-big">
+  <div class="show-big" id="pokeCardBig">
+    <img
+      src="./img/prev.png"
+      alt="previous"
+      class="poke-load-arrows"
+      onclick="loadPrevPokemon(${i})"
+    />
+  <div id="container-big" class="full-card">
   <div class="card text-center" id="pokeCardBigColor${i}">
 
   <div class="close-big-card-cross">
@@ -66,26 +65,21 @@ function renderPokemonBigCard(pokeId, pokeImg, pokeName, pokeType, i) {
       <div id="card-overview${i}">
         
       </div>
-      <!-- </div> -->
-
     </div>
+    
   </div>
 </div>
-
 </div>
-
 <img
   src="./img/next.png"
   alt="next image"
   class="poke-load-arrows"
   onclick="loadNextPokemon(${i})"
-  
 />
-
-
-</div>`;
+</div>
+`;
 }
 
-function cardPokeTypesBig(pokeTypes) {
-  return /*html*/ `<div class='pokeType-big'>${pokeTypes}</div>`;
+function cardPokeTypesBig(pokeTypeElement, i, j) {
+  return /*html*/ `<div class='pokeType-big box-shadow-${pokeTypeElement}' id='color-type-big${i}${j}'>${pokeTypeElement}</div>`;
 }

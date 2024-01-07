@@ -28,6 +28,46 @@
   pointer-events: none;
 }
 
+.spinner-border{
+  background-image: url(../img/pokeball.png) !important;
+  background-position: center;
+  object-fit: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none !important;
+  position: fixed;
+  background-color: white !important;
+  z-index: 999;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  --bs-spinner-width: 150px !important;
+  --bs-spinner-height: 150px !important;
+}
+
+.loading-screen{
+  background-color: rgba(255, 255, 255, 0.493) !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sr-only{
+  margin-top: 250px;
+  /* border: 1px solid red; */
+  border-radius: 15px;
+  padding: 5px 10px;
+  background-color: black;
+  color: white;
+}
+
 .noscroll {
   overflow: hidden;
 }
@@ -294,12 +334,12 @@ h1 {
   color: white;
 }
 .pokeType-big {
-  width: 80px;
-  border-radius: 10px;
-  padding: 4px 2px;
+  min-width: 50px;
+  border-radius: 15px;
+  padding: 5px 3px;
   text-align: center;
   background-color: #808796e0;
-  font-size: 14px;
+  font-size: 12px;
   color: white;
 }
 
@@ -321,55 +361,58 @@ h1 {
 }
 
 .box-shadow-grass {
-  box-shadow: inset 5px 5px 50px #22963b !important;
+  box-shadow: inset 5px 5px 50px #5FBD58 !important;
 }
 .box-shadow-fire {
-  box-shadow: inset 5px 5px 50px #fa6555 !important;
+  box-shadow: inset 5px 5px 50px #FBA54C !important;
 }
 .box-shadow-water {
-  box-shadow: inset 5px 5px 50px #76bdfd !important;
+  box-shadow: inset 5px 5px 50px #539DDF !important;
 }
 .box-shadow-electric {
-  box-shadow: inset 5px 5px 50px #ffd970 !important;
+  box-shadow: inset 5px 5px 50px #F2D94E !important;
 }
 .box-shadow-poison {
-  box-shadow: inset 5px 5px 50px #ae63b2 !important;
+  box-shadow: inset 5px 5px 50px #B763CF !important;
 }
 .box-shadow-ground {
-  box-shadow: inset 5px 5px 50px #baa76d !important;
+  box-shadow: inset 5px 5px 50px #DA7C4D !important;
 }
 .box-shadow-rock {
-  box-shadow: inset 5px 5px 50px #545454 !important;
+  box-shadow: inset 5px 5px 50px #C9BB8A !important;
 }
 .box-shadow-ghost {
-  box-shadow: inset 5px 5px 50px #5a0096 !important;
+  box-shadow: inset 5px 5px 50px #5F6DBC !important;
 }
 .box-shadow-ice {
-  box-shadow: inset 5px 5px 50px #38eeff !important;
+  box-shadow: inset 5px 5px 50px #75D0C1 !important;
 }
 .box-shadow-normal {
-  box-shadow: inset 5px 5px 50px #929292 !important;
+  box-shadow: inset 5px 5px 50px #A0A29F !important;
 }
 .box-shadow-bug {
-  box-shadow: inset 5px 5px 50px #24ddaf !important;
+  box-shadow: inset 5px 5px 50px #92BC2C !important;
 }
 .box-shadow-fighting {
-  box-shadow: inset 5px 5px 50px #7c0b0b !important;
+  box-shadow: inset 5px 5px 50px #D3425F !important;
 }
 .box-shadow-fairy {
-  box-shadow: inset 5px 5px 50px #b421c2 !important;
+  box-shadow: inset 5px 5px 50px #EE90E6 !important;
 }
 .box-shadow-psychic {
-  box-shadow: inset 5px 5px 50px #c0a407 !important;
+  box-shadow: inset 5px 5px 50px #FA8581 !important;
 }
 .box-shadow-dragon {
-  box-shadow: inset 5px 5px 50px #4e07c0 !important;
+  box-shadow: inset 5px 5px 50px #0C69C8 !important;
 }
 .box-shadow-dark {
-  box-shadow: inset 5px 5px 50px #130130 !important;
+  box-shadow: inset 5px 5px 50px #595761 !important;
 }
 .box-shadow-steel {
-  box-shadow: inset 5px 5px 50px #5a5e5d !important;
+  box-shadow: inset 5px 5px 50px #5695A3 !important;
+}
+.box-shadow-flying {
+  box-shadow: inset 5px 5px 50px #A1BBEC !important;
 }
 
 .content-flex {
@@ -395,14 +438,13 @@ h1 {
   background-color: #0a48a7;
   padding: 5px;
   border-radius: 5px;
-  position: absolute;
-
 }
 
 .full-card{
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   z-index: 99;
 }
 
@@ -423,10 +465,14 @@ h1 {
 }
 
 .show-big {
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   z-index: 99;
-  position: absolute;
-  top: 20vh;
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  left: 50%;
+  bottom: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -434,13 +480,9 @@ h1 {
 }
 
 .big-background{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-  background-color: red;
-  position: absolute;
+  margin: auto;
+  background-color: #0a49a763;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;

@@ -1,22 +1,7 @@
 
 function renderChart(i){
 
-let pokestats = [];
-let pokehp = pokemonAsJsonComp[i]["stats"][0]["base_stat"];
-let pokeattack = pokemonAsJsonComp[i]["stats"][1]["base_stat"];
-let pokedefense = pokemonAsJsonComp[i]["stats"][2]["base_stat"];
-let pokespecialattack = pokemonAsJsonComp[i]["stats"][3]["base_stat"];
-let pokespecialdefense = pokemonAsJsonComp[i]["stats"][4]["base_stat"];
-let pokespeed = pokemonAsJsonComp[i]["stats"][5]["base_stat"];
-pokestats.push(
-  pokehp,
-  pokeattack,
-  pokedefense,
-  pokespecialattack,
-  pokespecialdefense,
-  pokespeed
-);
-let card = document.getElementById(`card-overview${i}`);
+  let card = document.getElementById(`card-overview${i}`);
 card.innerHTML = "";
 card.innerHTML = `<div class="card-overview"><canvas id="myChart" class="chart"></canvas></div>`;
 const ctx = document.getElementById("myChart");
