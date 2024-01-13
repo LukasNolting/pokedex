@@ -20,28 +20,30 @@
   </head>
   <body onload="loadAPI()" id="body">
     <main>
-      <nav id="nav-normal" class="">
+      <nav id="nav-normal" class="nav">
         <div class="flex-g10">
           <a href="#"><img src="./img/nav-img.svg" class="nav-img" /></a>
-          <h1>Pokedex</h1>
+          <h2>Pokédex</h2>
         </div>
         <div>
-          <input type="text" placeholder="Search Pokemon..." />
-          <button>GO</button>
+          <input
+            type="text"
+            placeholder="Search Pokemon..."
+            id="searchName"
+            onkeyup="filterName()"
+          />
         </div>
+        <div class="container-nav"></div>
       </nav>
       <div id="card-container"></div>
       <div class="load-more">
-        <button onclick="loadMore(20)" id="loadMoreBtn">
-          Load more Pokemon
-        </button>
+        <button onclick="loadMore()" id="loadMoreBtn">Load more Pokémon</button>
       </div>
       <div id="big-Card"></div>
       <div id="loading-screen" class="loading-screen d-none">
         <span class="sr-only">Loading Pokémons...</span>
         <div class="text-center">
-          <div class="spinner-border" role="status">
-          </div>
+          <div class="spinner-border" role="status"></div>
         </div>
       </div>
       <script
@@ -51,7 +53,5 @@
         defer
       ></script>
     </main>
-
-    <!-- <canvas id="myChart"></canvas> -->
   </body>
 </html>
