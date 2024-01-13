@@ -195,7 +195,7 @@ function renderMoves(i) {
 
     for (let j = 0; j < 5; j++) {
       let pokeMove = moves[j]["move"]["name"].charAt(0).toUpperCase() + moves[j]["move"]["name"].slice(1);
-      move += `<div class="moves-list"><img src="../img/pokeball.png" class="icon-big-card">${pokeMove}</div>`;
+      move += `<div class="moves-list"><img src="./img/pokeball.png" class="icon-big-card">${pokeMove}</div>`;
     }
   toggleMoves(i, move);
 }
