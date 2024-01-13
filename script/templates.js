@@ -48,7 +48,7 @@ function renderPokemonBigCard(pokeId, pokeImg, pokeName, pokeType, i) {
         <div class="flex-sb">
           <h5 class="card-title" id="name-big${pokeName}">${pokeName}</h5>
           <div class="pokeIdBig" id="id-big${pokeId}">
-            <img src="../img/pokeball.png" class="icon-big-card" />#${pokeId}
+            <img src="./img/pokeball.png" class="icon-big-card" />#${pokeId}
           </div>
         </div>
         <div class="card-content">
@@ -104,10 +104,9 @@ function renderOverviewTab(height, weight, ability) {
   return /*html*/ `
       <div class="card-overview">
         <div class="card-overview-center">
-      <div class="flex-align-center-gap10"><img src="../img/height.svg" class="icon-big-card"><b class="width">Height:</b> ${height} m</div>
-      <div class="flex-align-center-gap10"><img src="../img/weight.svg" class="icon-big-card"><b class="width">Weight:</b> ${weight} kg</div>
-      <div class="flex-align-center-gap10">
-      <img src="../img/pokeball.png" class="icon-big-card">
+      <div class="flex-align-center-gap10"><img src="./img/height.svg" class="icon-big-card"><b class="width">Height:</b> ${height} m</div>
+      <div class="flex-align-center-gap10"><img src="./img/weight.svg" class="icon-big-card"><b class="width">Weight:</b> ${weight} kg</div>
+      <div class="flex-align-center-gap10"><img src="./img/pokeball.png" class="icon-big-card">
       <b class="width">Abilities: </b>
       <div class="flex-column">${ability}</div>
       </div>
