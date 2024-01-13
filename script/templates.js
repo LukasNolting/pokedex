@@ -39,7 +39,7 @@ function renderPokemonBigCard(pokeId, pokeImg, pokeName, pokeType, i) {
     <div class="card text-center" id="pokeCardBigColor${i}">
       <div class="close-big-card-cross">
         <img
-          src="../img/cross.png"
+          src="./img/cross.png"
           class="close-big-card-cross-img"
           onclick="closeBigCard()"
         />
