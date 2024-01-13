@@ -46,12 +46,10 @@ async function init() {
   const batchSize = 100;
   
   for (let i = renderedPokemonNumber; i > responseLenght; i += batchSize) {
-    
     const batchPromises = [];
     loadBatch(batchSize, batchPromises, i);
     await Promise.all(batchPromises);
     await new Promise((resolve) => setTimeout(resolve, 10));
-    
     if (fetchPokemons["name"].length > 50) {
       renderPokemonFor();
     }
@@ -195,17 +193,10 @@ function renderMoves(i) {
   let moves = fetchPokemons["moves"][pokemonIndex];
   let move = [];
 
-  if (moves.length >= 6) {
-    for (let j = 0; j < 6; j++) {
+    for (let j = 0; j < 5; j++) {
       let pokeMove = moves[j]["move"]["name"].charAt(0).toUpperCase() + moves[j]["move"]["name"].slice(1);
       move += `<div class="moves-list"><img src="../img/pokeball.png" class="icon-big-card">${pokeMove}</div>`;
     }
-  } else {
-    for (let j = 0; j < moves.length; j++) {
-      let pokeMove = moves[j]["move"]["name"].charAt(0).toUpperCase() + moves[j]["move"]["name"].slice(1);
-      move += `<div class="moves-list"><img src="../img/pokeball.png" class="icon-big-card">${pokeMove}</div>`;
-    }
-  }
   toggleMoves(i, move);
 }
 
